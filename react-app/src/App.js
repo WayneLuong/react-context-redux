@@ -11,6 +11,11 @@ function App() {
     { id: 3, title: "Movie 3", btnText: "click me 3" }
   ])
 
+  //Handle state change from prop
+  const handleSubmit = (name) => {
+    console.log(name)
+  }
+
   return (
     <div className="App">
       {/* <MovieFunc title='Movie 1' btnText='click me 1' />
@@ -19,12 +24,12 @@ function App() {
 
       <h1>Functional Components</h1>
       {movies.map((movie) => (
-        <MovieFunc key={movie.id} title={movie.title} btnText={(movie.btnText)} />
+        <MovieFunc key={movie.id} id={movie.id} title={movie.title} btnText={(movie.btnText)} handleSubmit={handleSubmit} />
       ))}
 
       <h1>Class Components</h1>
       {movies.map((movie) => (
-        <MovieClass key={movie.id} title={movie.title} btnText={(movie.btnText)} />
+        <MovieClass key={movie.id} id={movie.id} title={movie.title} btnText={(movie.btnText)} handleSubmit={handleSubmit} />
       ))}
     </div>
   );
