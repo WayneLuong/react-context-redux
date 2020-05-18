@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import StateDrill from './StateDrill'
 
 //Class Component
 class MovieClass extends Component {
@@ -12,7 +13,7 @@ class MovieClass extends Component {
     }
 
     render() {
-        const { title } = this.props
+        const { title, drill } = this.props
         const { name } = this.state
 
         //Props passed in function
@@ -31,11 +32,12 @@ class MovieClass extends Component {
 
         return (
             <div>
-                <p>{title}</p>
+                <b>{title}</b>
                 <button onClick={updateButton}>{this.state.btnText}</button>
                 <input type="text" name='name' onChange={updateName} />
                 onChange: {name}
                 <button onClick={handleSubmit}>Submit</button>
+                <StateDrill drill2={drill} />{/* Passing state down 2 levels */}
             </div>
         )
     }

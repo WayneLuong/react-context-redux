@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import StateDrill from './StateDrill'
 
 //Functional Component
 function MovieFunc(props) {
-    const { id, title, btnText } = props
+    const { id, title, btnText, drill } = props
 
     //Creating and setting state
     const [state, setState] = useState(btnText) //Takes in a value for the initial state e.g. state = btnText
@@ -26,11 +27,12 @@ function MovieFunc(props) {
 
     return (
         <div>
-            <p>{title}</p>
+            <b>{title}</b>
             <button onClick={updateButton}>{state}</button>
             <input type="text" name='name' onChange={updateName} />
             onChange: {name}
             <button onClick={handleSubmit}>Submit</button>
+            <StateDrill drill2={drill} />{/* Passing state down 2 levels */}
         </div>
     )
 }

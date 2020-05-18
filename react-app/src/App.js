@@ -24,12 +24,12 @@ function App() {
 
       <h1>Functional Components</h1>
       {movies.map((movie) => (
-        <MovieFunc key={movie.id} id={movie.id} title={movie.title} btnText={(movie.btnText)} handleSubmit={handleSubmit} />
+        <MovieFunc key={movie.id} id={movie.id} title={movie.title} btnText={(movie.btnText)} handleSubmit={handleSubmit} drill={movies} />
       ))}
 
       <h1>Class Components</h1>
       {movies.map((movie) => (
-        <MovieClass key={movie.id} id={movie.id} title={movie.title} btnText={(movie.btnText)} handleSubmit={handleSubmit} />
+        <MovieClass key={movie.id} id={movie.id} title={movie.title} btnText={(movie.btnText)} handleSubmit={handleSubmit} drill={movies} />
       ))}
     </div>
   );
