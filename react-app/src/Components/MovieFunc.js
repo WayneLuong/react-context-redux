@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import StateDrill from './StateDrill'
+import PropTypes from 'prop-types'
 
 //Functional Component
 function MovieFunc(props) {
@@ -26,8 +27,8 @@ function MovieFunc(props) {
     }
 
     return (
-        <div>
-            <b>{title}</b>
+        <div style={{ backgroundColor: 'red' }}>
+            <b >{title}</b>
             <button onClick={updateButton}>{state}</button>
             <input type="text" name='name' onChange={updateName} />
             onChange: {name}
@@ -38,3 +39,10 @@ function MovieFunc(props) {
 }
 
 export default MovieFunc;
+
+//PropTypes
+MovieFunc.PropTypes = {
+    title: PropTypes.text.isRequired,
+    drill: PropTypes.array.isRequired,
+    name: PropTypes.text
+}

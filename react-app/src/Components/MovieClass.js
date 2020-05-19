@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StateDrill from './StateDrill'
+import PropTypes from 'prop-types'
 
 //Class Component
 class MovieClass extends Component {
@@ -44,3 +45,10 @@ class MovieClass extends Component {
 }
 
 export default MovieClass
+
+//PropTypes
+MovieClass.PropTypes = {
+    title: PropTypes.text.isRequired,
+    drill: PropTypes.array.isRequired,
+    name: PropTypes.text
+}
