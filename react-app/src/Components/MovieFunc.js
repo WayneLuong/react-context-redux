@@ -3,7 +3,7 @@ import StateDrill from './StateDrill'
 import PropTypes from 'prop-types'
 
 //Functional Component
-function MovieFunc(props) {
+const MovieFunc = (props) => {
     const { id, title, btnText, drill } = props
 
     //Creating and setting state
@@ -25,11 +25,18 @@ function MovieFunc(props) {
         setMovie({ id, title, btnText: name })
         props.handleSubmit(movie)
     }
+    //Dynamic Styling
+    const getStyle = () => {
+        return {
+            color: 'red',
+            textDecoration: state == 'click me 1' ? 'none' : 'line-through'
+        }
+    }
 
     return (
-        <div style={{ backgroundColor: 'red' }}>
-            <b >{title}</b>
-            <button onClick={updateButton}>{state}</button>
+        <div style={{ backgroundColor: 'grey' }} className='movieStyling inline'>
+            <b style={titleStyle}>{title}</b>
+            <button onClick={updateButton} style={getStyle()}>{state}</button>
             <input type="text" name='name' onChange={updateName} />
             onChange: {name}
             <button onClick={handleSubmit}>Submit</button>
@@ -38,11 +45,17 @@ function MovieFunc(props) {
     )
 }
 
-export default MovieFunc;
+//Styling
+const titleStyle = {
+    color: 'darkRed'
+}
 
 //PropTypes
-MovieFunc.PropTypes = {
-    title: PropTypes.text.isRequired,
+MovieFunc.propTypes = {
+    title: PropTypes.string.isRequired,
     drill: PropTypes.array.isRequired,
-    name: PropTypes.text
+    name: PropTypes.string
 }
+
+export default MovieFunc;
+

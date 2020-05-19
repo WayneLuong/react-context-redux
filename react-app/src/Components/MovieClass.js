@@ -30,11 +30,18 @@ class MovieClass extends Component {
         const handleSubmit = (e) => {
             this.props.handleSubmit(this.state)
         }
+        //Dynamic Styling
+        const getStyle = () => {
+            return {
+                color: 'red',
+                textDecoration: this.state.btnText == 'click me 1' ? 'none' : 'line-through'
+            }
+        }
 
         return (
-            <div>
-                <b>{title}</b>
-                <button onClick={updateButton}>{this.state.btnText}</button>
+            <div style={{ backgroundColor: 'grey' }} className='movieStyling'>
+                <b style={titleStyle}>{title}</b>
+                <button onClick={updateButton} style={getStyle()}>{this.state.btnText}</button>
                 <input type="text" name='name' onChange={updateName} />
                 onChange: {name}
                 <button onClick={handleSubmit}>Submit</button>
@@ -44,11 +51,17 @@ class MovieClass extends Component {
     }
 }
 
-export default MovieClass
+//Styling
+const titleStyle = {
+    color: 'darkRed'
+}
 
 //PropTypes
-MovieClass.PropTypes = {
-    title: PropTypes.text.isRequired,
+MovieClass.propTypes = {
+    title: PropTypes.string.isRequired,
     drill: PropTypes.array.isRequired,
-    name: PropTypes.text
+    name: PropTypes.string
 }
+
+export default MovieClass
+
