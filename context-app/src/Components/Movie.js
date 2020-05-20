@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { MovieContext } from '../MovieContext'
+import Delete from './actions/Delete'
 //import { DramaContext } from '../DramaContext'
 
 const Movie = () => {
@@ -11,8 +12,13 @@ const Movie = () => {
     //console.log('dramas: ', dramas)
     return (
         <>
-            Title:
-            {movies[0].title}
+            <h1>Movies</h1>
+            {movies.map(movie => (
+                <div key={movie.id}>
+                    Title: {movie.title}
+                    <Delete recordToDelete={movie} />
+                </div>
+            ))}
         </>
     )
 }
