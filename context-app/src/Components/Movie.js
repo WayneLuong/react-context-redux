@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { MovieContext } from '../MovieContext'
+import { MovieContext } from './Context/MovieContext'
 import Delete from './actions/Delete'
 import Edit from './actions/Edit'
 //import { DramaContext } from '../DramaContext'

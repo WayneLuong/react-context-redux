@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { DramaConsumer } from '../DramaContext'
+import { DramaConsumer } from './Context/DramaContext'
 import Delete from './actions/Delete'
 
 class Drama extends Component {

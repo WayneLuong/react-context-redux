@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { MovieContext } from '../../MovieContext'
+import { MovieContext } from '../Context/MovieContext'
 
 const Edit = ({ recordToEdit }) => {
     const [movies, setMovies] = useContext(MovieContext)

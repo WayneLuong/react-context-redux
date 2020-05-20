@@ -2,8 +2,8 @@ import React from 'react';
 import Movie from './Components/Movie'
 import Drama from './Components/Drama'
 import Add from './Components/actions/Add'
-import { MovieProvider } from './MovieContext'
-import { DramaProvider } from './DramaContext'
+import { MovieProvider } from './Components/Context/MovieContext'
+import { DramaProvider } from './Components/Context/DramaContext'
 import './App.css';
 
 const App = () => {
