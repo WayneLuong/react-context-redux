@@ -1,15 +1,19 @@
 import React, { useState, useContext } from 'react'
 import { MovieContext } from '../MovieContext'
+//import { DramaContext } from '../DramaContext'
 
 const Movie = () => {
+    //use of multiple context
     const [movies, setMovies] = useContext(MovieContext)
+    //const [dramas, setDramas] = useContext(DramaContext)
 
-    console.log(movies)
+    console.log('movies: ', movies)
+    //console.log('dramas: ', dramas)
     return (
-        <div>
+        <>
             Title:
             {movies[0].title}
-        </div>
+        </>
     )
 }
 

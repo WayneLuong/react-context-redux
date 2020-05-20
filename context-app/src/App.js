@@ -1,14 +1,19 @@
 import React from 'react';
 import Movie from './Components/Movie'
+import Drama from './Components/Drama'
 import { MovieProvider } from './MovieContext'
+import { DramaProvider } from './DramaContext'
 import './App.css';
 
 const App = () => {
   return (
     <MovieProvider>
-      <div className="App">
-        <Movie />
-      </div>
+      <DramaProvider>
+        <div className="App">
+          <Movie />
+          <Drama />
+        </div>
+      </DramaProvider>
     </MovieProvider>
   );
 }
