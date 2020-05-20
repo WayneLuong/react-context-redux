@@ -23,7 +23,7 @@ const Add = (props) => {
         }
 
         setMovies(prevMovies => [...prevMovies, newMovie])
-        //setMovies([...movies, { id: 'test' }])
+        //setMovies([...movies, newMovie])
     }
 
     return (

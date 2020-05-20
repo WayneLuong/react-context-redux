@@ -1,0 +1,8 @@
+.editForm {
+    display: none;
+    background-color: grey;
+    padding: 20px;;
+}
+.active {
+    display:block;
+}
