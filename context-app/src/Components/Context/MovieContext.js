@@ -1,3 +1,4 @@
+//Method 1
 import React, { useState, createContext } from 'react'
 
 export const MovieContext = createContext()

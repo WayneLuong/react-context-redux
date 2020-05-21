@@ -1,3 +1,4 @@
+//Method 2 - legacy
 import React, { Component } from "react";
 import { DramaConsumer } from './Context/DramaContext'
 import Delete from './actions/Delete'

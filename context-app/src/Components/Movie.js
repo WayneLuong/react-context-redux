@@ -1,3 +1,4 @@
+//Method 1
 import React, { useContext } from 'react'
 import { MovieContext } from './Context/MovieContext'
 import Delete from './actions/Delete'
