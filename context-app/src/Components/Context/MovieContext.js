@@ -1,8 +1,10 @@
 //Method 1
 import React, { useState, createContext } from 'react'
 
+//Create Context
 export const MovieContext = createContext()
 
+//Create Provider
 export const MovieProvider = (props) => {
 
     const [movies, setMovies] = useState([
