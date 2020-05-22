@@ -4,7 +4,7 @@ export default (state, action) => {
       return {
         ...state,
         transactions: state.transactions.filter(transaction => transaction.id !== action.payload)
-      }
+      } //args on the right will override the left; same with Object.Assign
     case 'ADD_TRANSACTION':
       return {
         ...state,
