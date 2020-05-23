@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
 
-  //LIFECYCLE METHODS
+  //LIFECYCLE METHODS = useeffect
+  //USING OTHER LIBARIES
+  //https://reactjs.org/docs/hooks-reference.html#useeffect
   return (
     <div className="App">
       App

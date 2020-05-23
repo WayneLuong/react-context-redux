@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux'
 import { createCourse } from '../actions/courseActions'
@@ -7,6 +7,15 @@ const Courses = () => {
     //assign redux to state
     const courses = useSelector(state => state.courses)
     const dispatch = useDispatch()
+
+    //Lifecycle method - runs after a rerender
+    useEffect(() => {
+        console.log('running')
+        return () => {
+            // Clean up function
+            console.log('Clean up')
+        };
+    }, [])
 
     //Function
     const addCourse = () => {
