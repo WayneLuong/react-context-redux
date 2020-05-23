@@ -15,7 +15,9 @@ const store = createStore(
 )
 
 //ACTIONS
+
 //REDUCER
+
 //DISPATCH
 
 ReactDOM.render(
