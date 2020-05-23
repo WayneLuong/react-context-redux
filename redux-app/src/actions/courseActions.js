@@ -5,3 +5,17 @@ export function createCourse(course) {
         payload: course
     }
 }
+
+export function createCourse(id) {
+    return {
+        type: "DELETE_COURSE",
+        payload: id
+    }
+}
+
+export function createCourse(newCourse) {
+    return {
+        type: "EDIT_COURSE",
+        payload: newCourse
+    }
+}

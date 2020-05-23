@@ -2,11 +2,13 @@ import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux'
 import { createCourse } from '../actions/courseActions'
-import { createStore } from 'redux'
 
 const Courses = () => {
+    //assign redux to state
     const courses = useSelector(state => state.courses)
     const dispatch = useDispatch()
+
+    //Function
     const addCourse = () => {
         const newCourse = {
             id: uuidv4(),
