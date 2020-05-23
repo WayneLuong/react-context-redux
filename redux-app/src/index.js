@@ -14,11 +14,11 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-//ACTIONS
+//ACTIONS -> with action.type and payloads
 
-//REDUCER
+//REDUCER -> Localized state
 
-//DISPATCH
+//DISPATCH -> dispatch actions to reducer
 
 ReactDOM.render(
   // Provider as parent
