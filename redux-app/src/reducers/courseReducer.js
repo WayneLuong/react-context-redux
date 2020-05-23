@@ -21,9 +21,9 @@ const courseReducer = (state = initialState, action) => {
         case 'ADD_COURSE':
             return [...state, action.payload]
         case 'DELETE_COURSE':
-            return state.filter(course => { course.id !== action.payload })
+            return state.filter(course => course.id !== action.payload)
         case 'EDIT_COURSE':
-            return state.map(course => { course.id === action.payload.id ? (course = action.payload) : course })
+            return state.map(course => course.id === action.payload.id ? (course = action.payload) : course)
         default:
             return state
     }

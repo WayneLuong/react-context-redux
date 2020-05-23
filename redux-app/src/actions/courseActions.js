@@ -6,14 +6,14 @@ export function createCourse(course) {
     }
 }
 
-export function createCourse(id) {
+export function deleteCourse(id) {
     return {
         type: "DELETE_COURSE",
         payload: id
     }
 }
 
-export function createCourse(newCourse) {
+export function editCourse(newCourse) {
     return {
         type: "EDIT_COURSE",
         payload: newCourse
