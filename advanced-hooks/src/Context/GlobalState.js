@@ -36,7 +36,6 @@ export const GlobalProvider = (props) => {
     //useEffect: LIFECYCLE METHOD (2nd param - runs only when state changes)
     useEffect(() => {
         localStorage.setItem('data', JSON.stringify(state))
-        console.log('test')
     }, [state])
     //------------------------------------------------------------------------------
 
