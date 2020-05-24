@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { GlobalProvider } from './Context/GlobalState'
 import './App.css';
 
@@ -6,17 +6,7 @@ import AddTodo from './Components/AddTodo'
 import TodosList from './Components/TodosList'
 
 function App() {
-
   //USING OTHER LIBARIES
-
-  //Lifecycle method - runs after a render (ComponentDidMount)
-  useEffect(() => {
-    console.log('running')
-    return () => {
-      // Clean up after component gets removed (ComponentWillUnmount)
-      console.log('Clean up')
-    };
-  }, [/* prop.source */]) //Add a conditional for useEffect to fire e.g. specific object prop.source in changes
 
   return (
     <GlobalProvider>
@@ -30,3 +20,14 @@ function App() {
 }
 
 export default App;
+
+
+/*Lifecycle method - runs after a render (ComponentDidMount)
+useEffect(() => {
+  console.log('running')
+  return () => {
+    // Clean up after component gets removed (ComponentWillUnmount)
+    console.log('Clean up')
+  };
+}, [prop.source ]) */
+  //Add a conditional for useEffect to fire e.g. specific object prop.source in changes

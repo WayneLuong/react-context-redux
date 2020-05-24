@@ -12,20 +12,26 @@ const TodosReducer = (state, action) => {
             return action.payload
         }
         case 'ADD_TODO': {
-            state = { todos: [...state.todos, action.payload] }
-            return state
+            return { todos: [...state.todos, action.payload] }
+        }
+        case 'DELETE_TODO': {
+            return { todos: state.todos.filter(todo => todo.id !== action.payload) }
+        }
+        case 'EDIT_TODO': {
+            return {
+                todos: state.todos.map(todo => {
+                    if (todo.id === action.payload.id) { todo = action.payload }
+                    return todo
+                })
+            }
         }
         case 'TOGGLE': {
-            /*  state.todos = state.todos.map(todo => {
-                 if (todo.id === action.payload) {
-                     console.log(todo, !todo.completed)
-                     return {
-                         ...todo,
-                         completed: !todo.completed
-                     }
-                 }
-             }) */
-            return state
+            return {
+                todos: state.todos.map(todo => {
+                    if (todo.id === action.payload) { todo.completed = !todo.completed }
+                    return todo
+                })
+            }
         }
         default:
             return state

@@ -8,18 +8,6 @@ const initialState = {
     object2: []
 }
 
-//--------------------------Custom made hook---------------------------------
-function useEffectOnce(callback) {
-    //useRef: contains a mutable object
-    const didRun = useRef(false)
-    useEffect(() => {
-        if (!didRun.current) {
-            callback();
-            didRun.current = true
-        }
-    })
-}
-
 //--------------------------Exports---------------------------------
 export const GlobalContext = createContext(initialState)
 
@@ -38,7 +26,6 @@ export const GlobalProvider = (props) => {
         localStorage.setItem('data', JSON.stringify(state))
     }, [state])
     //------------------------------------------------------------------------------
-
     return (
         <GlobalContext.Provider value={{
             todos: state.todos,
@@ -47,5 +34,17 @@ export const GlobalProvider = (props) => {
             {props.children}
         </GlobalContext.Provider>
     )
+}
+
+//--------------------------Custom made hook---------------------------------
+function useEffectOnce(callback) {
+    //useRef: contains a mutable object
+    const didRun = useRef(false)
+    useEffect(() => {
+        if (!didRun.current) {
+            callback();
+            didRun.current = true
+        }
+    })
 }
 
